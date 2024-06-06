@@ -6,7 +6,6 @@ const methodOverride = require('method-override');
 const expressSession = require('express-session');
 const connectFlash = require('connect-flash');
 const morgan = require('morgan');
-const mongoose = require('./config/mongoose');
 const passport = require('./config/passport');
 
 const pagesRoute = require('./routes/pages');
