@@ -1,6 +1,6 @@
 const io = require('socket.io')();
 
-const chatModel = require('../models/chat'); // Adjust the path as needed
+const chatModel = require('./models/chat'); // Adjust the path as needed
 
 io.on('connection', socket => {
   console.log(`Client (${socket.id}) is connected.`);
