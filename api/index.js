@@ -1,13 +1,11 @@
-const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
-const chatModel = require('../models/chat'); // Adjust the path as needed
-const app = require('../app'); // Adjust the path as needed
+const chatModel = require('../models/chat');
+const app = require('../app');
 
 const server = http.createServer(app);
 const io = socketIo(server);
 
-// Socket.io setup
 io.on('connection', socket => {
   console.log(`Client (${socket.id}) is connected.`);
 
@@ -30,7 +28,6 @@ io.on('connection', socket => {
   });
 });
 
-// Export the handler for Vercel
 module.exports = (req, res) => {
   server.emit('request', req, res);
 };
