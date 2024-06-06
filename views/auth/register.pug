@@ -1,0 +1,23 @@
+extends ./../layout
+
+block main
+    div.row.my-5
+        div.col-12.col-sm-8.col-md-4.mx-auto
+            div.card.border-dark
+                div.card-header.bg-dark.text-white
+                    h4.mb-0 Register
+                div.card-body
+                    form( method='post' action='/register' )
+                        div.form-group
+                            label( for='name') Name
+                            input( type='text' name='name' class='form-control' id='name' )
+                        div.form-group
+                            label( for='email') Email
+                            input( type='email' name='email' class='form-control' id='email' )
+                        div.form-group
+                            label( for='password') Password
+                            input( type='password' name='password' class='form-control' id='password' )
+                        div.form-group
+                            label( for='password_confirmation') Confirm Password
+                            input( type='password' name='password_confirmation' class='form-control' id='password_confirmation' )
+                        button( type='submit' class='btn btn-dark' ) Submit

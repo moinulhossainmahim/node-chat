@@ -1,0 +1,12 @@
+extends ./../layout
+
+block main
+    div.jumbotron.my-5
+        h1.display-3= title
+        p.lead #{title} is a simple real-time chat application. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+        hr.my-4
+        p.lead #[a( href='#' class='btn btn-primary btn-lg' ) Learn more]
+
+
+append style
+    link( rel='stylesheet' href='/stylesheets/home.css' )

@@ -1,0 +1,14 @@
+extends ./../layout
+
+block main
+    div.row.my-5
+        div.col-12.col-sm-8.col-md-4.mx-auto
+            div.card.border-dark
+                div.card-header.bg-dark.text-white
+                    h4.mb-0 Profile
+                div.card-body
+                    p
+                        b Name
+                    p= user.name
+                div.card-footer
+                    a( href='/profile/edit' class='btn btn-dark' ) Edit

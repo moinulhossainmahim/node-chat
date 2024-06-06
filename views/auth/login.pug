@@ -1,0 +1,17 @@
+extends ./../layout
+
+block main
+    div.row.my-5
+        div.col-12.col-sm-8.col-md-4.mx-auto
+            div.card.border-dark
+                div.card-header.bg-dark.text-white
+                    h4.mb-0 Login
+                div.card-body
+                    form( method='post' action='/login' )
+                        div.form-group
+                            label( for='email') Email
+                            input( type='text' name='email' class='form-control' id='email' )
+                        div.form-group
+                            label( for='password') Password
+                            input( type='password' name='password' class='form-control' id='password' )
+                        button( type='submit' class='btn btn-dark' ) Submit

@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "src": "bin/www",
+      "use": "@vercel/node"
+    }
+  ],
+  "name": "nodejs-chat",
+  "routes": [
+    {
+      "dest": "bin/www",
+      "src": "/(.*)"
+    }
+  ],
+  "version": 2
+}

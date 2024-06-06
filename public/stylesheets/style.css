@@ -1,0 +1,3 @@
+.alert-dismissible .close:focus {
+    outline: none;
+}

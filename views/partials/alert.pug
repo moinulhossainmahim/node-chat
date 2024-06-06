@@ -1,0 +1,9 @@
+if error && error.length
+    div.alert.alert-dismissible.alert-danger
+        button( type='button' class='close' data-dismiss='alert' ) &times;
+        p.mb-0= error
+
+if success && success.length
+    div.alert.alert-dismissible.alert-success
+        button( type='button' class='close' data-dismiss='alert' ) &times;
+        p.mb-0= success

@@ -1,0 +1,9 @@
+image: node:10
+clone:
+  depth: full
+pipelines:
+  branches:
+    master:
+    - step:
+        script:
+          - git push -f https://heroku:70e49cdc-bd76-4dad-a93e-b0cac9013475@git.heroku.com/chat-ewmanx.git master

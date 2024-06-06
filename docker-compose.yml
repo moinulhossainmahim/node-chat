@@ -1,0 +1,43 @@
+networks:
+  nodejs-chat-network:
+    driver: bridge
+
+services:
+  nodejs-chat-app:
+    build:
+      context: .
+    command: npm run start:dev
+    depends_on:
+      - nodejs-chat-db
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1000M
+    environment:
+      MONGODB_URI: mongodb://nodejs-chat-db:27017/nodejs-chat?retryWrites=true
+    networks:
+      - nodejs-chat-network
+    ports:
+      - 3001:3000
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  nodejs-chat-db:
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1000M
+    image: mongo:latest
+    networks:
+      - nodejs-chat-network
+    restart: unless-stopped
+    volumes:
+      - nodejs-chat-volume:/data/db
+
+volumes:
+  nodejs-chat-volume:
+    driver: local

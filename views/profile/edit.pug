@@ -1,0 +1,15 @@
+extends ./../layout
+
+block main
+    div.row.my-5
+        div.col-12.col-sm-8.col-md-4.mx-auto
+            div.card.border-dark
+                div.card-header.bg-dark.text-white
+                    h4.mb-0 Profile
+                div.card-body
+                    form( method='post' action='/profile/update' )
+                        input( type='hidden' name='_method' value='put' )
+                        div.form-group
+                            label( for='name') Name
+                            input( type='text' name='name' class='form-control' id='name' value=`${user.name}` )
+                        button( type='submit' class='btn btn-dark' ) Submit

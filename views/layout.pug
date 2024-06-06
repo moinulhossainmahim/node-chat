@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        meta( charset='utf-8' )
+        meta( name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' )
+        if title
+            title= title
+        else
+            title Chat
+        link( rel='stylesheet' href='/stylesheets/bootstrap-4.3.1.css' )
+        block style
+            link( rel='stylesheet' href='/stylesheets/style.css' )
+    body.body
+        block header
+            include partials/header.pug
+        div.container
+            block alert
+                include partials/alert.pug
+            block main
+        script( src='/javascripts/jquery-3.3.1.js' )
+        script( src='/javascripts/bootstrap-4.3.1.js' )
+        block script
+            script( src='/javascripts/script.js' )

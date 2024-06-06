@@ -1,0 +1,32 @@
+extends ./../layout
+
+block main
+  div.row
+    div.col-12.col-sm-9.col-md-6.my-5.mx-auto
+      div.card.bd-dark.text-white
+        form(id='form' onsubmit='return false')
+          div.input-group.px-3.my-3
+            textarea(type='text' name='message' class='form-control' id='message' rows='3' placeholder='Message')
+            div.input-group-append
+              button(type='submit' class='btn btn-dark text-white' id='send') Send
+        div.mx-3.mb-3.text-dark.d-none#typing
+        ul.list-group#messages
+          for d in chats
+            li.list-group-item.list-group-item-action.flex-column.align-items-start
+              div.d-flex.w-100.justify-content-between
+                h5.mb-1= d.user ? d.user.name : ''
+                small #{moment(d.createdAt).fromNow()}
+              p.mb-1= d.message
+
+block script
+  script(src='/javascripts/socket.io-4.7.5.js')
+  script(src='/javascripts/moment-2.24.0.js')
+  script.
+    const user = {
+      id: '#{user.id}',
+      name: '#{user.name}',
+    };
+  script(src='/javascripts/chat.js')
+
+append style
+  link(rel='stylesheet' href='/stylesheets/chat.css')

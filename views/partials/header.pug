@@ -1,0 +1,19 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    div.container
+        a( href='/' class='navbar-brand' ) Chat
+        button( type='button' class='navbar-toggler' data-toggle='collapse' data-target='#navbar' )
+            span.navbar-toggler-icon
+        div.collapse.navbar-collapse#navbar
+            ul.navbar-nav.ml-auto
+                if auth
+                    li.nav-item
+                        a( href='/chat' class='nav-link' ) Chat
+                    li.nav-item
+                        a( href='/profile/show' class='nav-link' ) Profile
+                    li.nav-item
+                        a( href='/logout' class='nav-link' ) Logout
+                if guest
+                    li.nav-item
+                        a( href='/login' class='nav-link' ) Login
+                    li.nav-item
+                        a( href='/register' class='nav-link' ) Register
